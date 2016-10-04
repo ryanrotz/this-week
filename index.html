@@ -21,6 +21,10 @@
     <input type="submit">
   </form>
 
+  <ul>
+  <li ng-repeat="meetup in meetups"><a ng-href="{{meetup.event_url}}">{{meetup.name}}</a></li>
+  </ul>
+
 </div>
 
 </body>

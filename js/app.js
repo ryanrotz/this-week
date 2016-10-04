@@ -6,7 +6,7 @@ angular.module('ThisWeekApp', [])
   $scope.zip = '98122';
   $scope.radius = '5';
   $scope.text = 'tech';
-  $scope.data = [];
+  $scope.meetups = [];
 
   $scope.submitCity = function() {
     var req = {
@@ -17,16 +17,14 @@ angular.module('ThisWeekApp', [])
         'radius': $scope.radius,
         'text': $scope.text,
         'time': ',1w',
-        'key': 'ADD KEY HERE'
+        'key': '6e3f56396c8665c5e6e5d4d78653828'
         // page: 10
         // key: process.env.MEETUP_SECRET
       }
     }
 
   $http(req).then(function success(res) {
-     // var data = JSON.parse(res.data) 
-      // var data2 = res.data.config;   
-      // console.log(res);
+     $scope.meetups = res.data.results;
       console.log(res);
       // console.log(data2);
   }, function error(res) {
