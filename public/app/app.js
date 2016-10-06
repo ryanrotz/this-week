@@ -1,6 +1,7 @@
-angular.module('ThisWeekApp', [])
+angular.module('ThisWeekApp', ['ui.router'])
 
-.config(['$stateProvider', 'urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
 
   $stateProvider
   .state('/', {
@@ -10,10 +11,9 @@ angular.module('ThisWeekApp', [])
   })
   .state('404', {
     url: '/404',
-    templateUrl: 'views/404/html'
+    templateUrl: 'views/404.html'
   });
 
-  $locationProvider.htmlmode(true);
   $urlRouterProvider.otherwise('/404');
 }])
 
