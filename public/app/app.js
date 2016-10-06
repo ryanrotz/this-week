@@ -1,5 +1,21 @@
 angular.module('ThisWeekApp', [])
 
+.config(['$stateProvider', 'urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  $stateProvider
+  .state('/', {
+    url: '/',
+    templateUrl: 'views/index.html',
+    controller: 'HomeCtrl'
+  })
+  .state('404', {
+    url: '/404',
+    templateUrl: 'views/404/html'
+  });
+
+  $locationProvider.htmlmode(true);
+  $urlRouterProvider.otherwise('/404');
+}])
 
 .controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
 
@@ -34,6 +50,4 @@ angular.module('ThisWeekApp', [])
   };
 
 }]);
-
-
 
