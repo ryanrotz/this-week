@@ -1,23 +1,28 @@
-angular.module('ThisWeekApp', ['ui.router'])
+var myApp = angular.module('ThisWeekApp', ['ui.router']);
 
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+myApp.config([
+  '$stateProvider', 
+  '$urlRouterProvider', 
+  '$locationProvider', 
+  function($stateProvider, $urlRouterProvider, $locationProvider) {
+  // $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise('/404');
 
   $stateProvider
-  .state('/', {
+  .state('home', {
     url: '/',
-    templateUrl: 'views/index.html',
+    templateUrl: 'app/views/main.html',
     controller: 'HomeCtrl'
   })
   .state('404', {
     url: '/404',
-    templateUrl: 'views/404.html'
+    templateUrl: 'app/views/404.html'
   });
 
-  $urlRouterProvider.otherwise('/404');
-}])
+  $locationProvider.html5Mode(true);
+}]);
 
-.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
+myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.zip = '98122';
   $scope.radius = '5';
@@ -33,7 +38,7 @@ angular.module('ThisWeekApp', ['ui.router'])
         'radius': $scope.radius,
         'text': $scope.text,
         'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        'key': process.env.MEETUP_SECRET,
         // page: 10
         // key: process.env.MEETUP_SECRET
       }

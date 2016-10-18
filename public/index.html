@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html ng-app="ThisWeekApp">
-<head>
-  <base href="/">
-  <meta charset="utf-8">
-  <title>This Week</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.js"></script> -->
-  <script src="app/app.js"></script>
-</head>
+<html lang="en" ng-app="ThisWeekApp">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>This Week</title>
+
+<!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.js"></script> -->
+    <script src="app/app.js"></script>
+  </head>
 <body>
 
-<div ng-controller="HomeCtrl">
-  <form ng-submit="submitCity()">
-    <label for="zip">Zip</label>
-    <input name="zip" type="text" ng-model="zip" value="98101">
-    <label for="radius">Within</label>
-    <input name="radius" type="text" ng-model="radius" value="5"> miles
-    <label for="text">Search</label>
-    <input type="text" name="text" ng-model="text" placeholder="i.e. Tech">
-    <input type="submit">
-  </form>
+<div class="container">
+    <div ui-view></div>
+  </div>
 
-  <ul>
-  <li ng-repeat="meetup in meetups"><a ng-href="{{meetup.event_url}}">{{meetup.name}}</a></li>
-  </ul>
-
-</div>
 
 </body>
 </html>
