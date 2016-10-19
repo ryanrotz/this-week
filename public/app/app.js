@@ -1,3 +1,5 @@
+// require('localenvironment');
+
 var myApp = angular.module('ThisWeekApp', ['ui.router']);
 
 myApp.config([
@@ -38,7 +40,7 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
         'radius': $scope.radius,
         'text': $scope.text,
         'time': ',1w',
-        'key': process.env.MEETUP_SECRET,
+        'key': process.env.SECRET
         // page: 10
         // key: process.env.MEETUP_SECRET
       }
