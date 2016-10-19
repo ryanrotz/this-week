@@ -40,7 +40,7 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
         'radius': $scope.radius,
         'text': $scope.text,
         'time': ',1w',
-        'key': process.env.SECRET
+        'key': '6e3f56396c8665c5e6e5d4d78653828'
         // page: 10
         // key: process.env.MEETUP_SECRET
       }

@@ -1,0 +1,20 @@
+<!-- Column of meetups -->
+  <div ng-controller="HomeCtrl">
+    <form ng-submit="submitCity()">
+      <label for="zip">Zip</label>
+      <input name="zip" type="text" ng-model="zip" value="98101">
+      <label for="radius">Within</label>
+      <input name="radius" type="text" ng-model="radius" value="5"> miles
+      <label for="text">Search</label>
+      <input type="text" name="text" ng-model="text" placeholder="i.e. Tech">
+      <input type="submit">
+    </form>
+
+    <div ng-repeat="meetup in meetups">
+      <div>{{meetup.group.name}}</div>
+      <div><a ng-href="{{meetup.event_url}}">{{meetup.name}}</a></div>
+      <div>Going: {{meetup.yes_rsvp_count}}</div>
+      <div>{{meetup.venue.name}}</div>
+      <hr>
+    </div>
+  </div>
