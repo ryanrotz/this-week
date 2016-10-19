@@ -1,6 +1,5 @@
-// require('localenvironment');
 
-var myApp = angular.module('ThisWeekApp', ['ui.router']);
+var myApp = angular.module('ThisWeekApp', ['ui.router', 'ngAnimate', 'ngTouch', 'ui.bootstrap']);
 
 myApp.config([
   '$stateProvider', 
