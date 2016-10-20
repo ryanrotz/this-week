@@ -55,5 +55,23 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
     });
   };
 
+ $scope.showActions = false;
+  
+  $scope.someFunction = function(){
+    $scope.showActions = !$scope.showActions;
+  };
+
+  
+  $scope.showMe = false;
+  $scope.showMore = true;
+
+  $scope.swipeLeft = function(){
+    // columns move to the left
+    // the column on the right appears
+    $scope.showMe = !$scope.showMe;
+    $scope.showMore = !$scope.showMore;
+  };
+
+
 }]);
 
