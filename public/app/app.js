@@ -65,7 +65,7 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.showMe = false;
   $scope.showMore = true;
 
-  $scope.swipeLeft = function(){
+  $scope.swipe = function(){
     // columns move to the left
     // the column on the right appears
     $scope.showMe = !$scope.showMe;

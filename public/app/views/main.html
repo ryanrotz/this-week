@@ -1,14 +1,18 @@
 <div class="row">
   <div ng-include="'app/views/header.html'"></div>
-  <div ng-swipe-left="swipeLeft()">
+  <div ng-swipe-left="swipe()">
     <div class="col-sm-4" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
     <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
     <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
 <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
+  </div>
+
+  <div ng-swipe-right="swipe()">
     <div class="col-sm-4" ng-hide="showMore" ng-include="'app/views/column.html'"></div>
     <!-- delete this column below. It's just there to show you it's working -->
     <div class="col-sm-4" ng-hide="showMore" ng-include="'app/views/column.html'"></div>
-  </div> 
+  </div>
+
 </div>
 
 <!-- NEXT: add functionality for ng-swipe-right. Currently, when you swipe left twice in a row, you see what you should be seeing when you swipe right (the original view) -->
