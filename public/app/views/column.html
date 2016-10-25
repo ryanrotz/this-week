@@ -1,13 +1,17 @@
 <!-- Column of meetups -->
   <div ng-controller="HomeCtrl">
-    <form ng-submit="submitCity()">
+    <form ng-submit="submitCity()" uib-dropdown>
     <!--   <label for="zip">Zip</label>
       <input name="zip" type="text" ng-model="zip" value="98101">
       <label for="radius">Within</label>
       <input name="radius" type="text" ng-model="radius" value="5"> miles -->
       <label for="text">Topic</label>
-      <input type="text" name="text" ng-model="text" placeholder="i.e. Tech">
-
+      <input type="text" name="text" ng-model="text" placeholder="i.e. Tech" id="simple-dropdown" uib-dropdown-toggle>
+        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+          <li ng-repeat="topic in topics">
+            <a ng-click="bindTopic(topic)">{{topic}}</a>
+          </li>
+        </ul>
 
       <input type="submit">
     </form>
