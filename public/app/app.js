@@ -29,6 +29,28 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.radius = '5';
   $scope.text = 'tech';
   $scope.meetups = [];
+  $scope.topics = [
+    'Outdoors',
+    'Tech',
+    'Moms',
+    'Well-Being',
+    'Sports',
+    'Education',
+    'Photography',
+    'Food',
+    'Writing',
+    'Language',
+    'Music',
+    'Movements',
+    'LGBTQ',
+    'Film',
+    'Games',
+    'Beliefs',
+    'Arts',
+    'Fashion',
+    'Social',
+    'Career'
+  ]
 
   $scope.submitCity = function() {
     var req = {
