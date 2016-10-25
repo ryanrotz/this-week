@@ -27,30 +27,34 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.zip = '98122';
   $scope.radius = '5';
-  $scope.text = 'tech';
+  $scope.text = '';
   $scope.meetups = [];
-  $scope.topics = [
-    'Outdoors',
-    'Tech',
-    'Moms',
-    'Well-Being',
-    'Sports',
-    'Education',
-    'Photography',
-    'Food',
-    'Writing',
-    'Language',
-    'Music',
-    'Movements',
-    'LGBTQ',
-    'Film',
-    'Games',
-    'Beliefs',
-    'Arts',
-    'Fashion',
-    'Social',
-    'Career'
-  ]
+  // $scope.topics = [
+  //   'Outdoors',
+  //   'Tech',
+  //   'Moms',
+  //   'Well-Being',
+  //   'Sports',
+  //   'Education',
+  //   'Photography',
+  //   'Food',
+  //   'Writing',
+  //   'Language',
+  //   'Music',
+  //   'Movements',
+  //   'LGBTQ',
+  //   'Film',
+  //   'Games',
+  //   'Beliefs',
+  //   'Arts',
+  //   'Fashion',
+  //   'Social',
+  //   'Career'
+  // ]
+
+    $scope.status = {
+    isopen: false
+  };
 
   $scope.submitCity = function() {
     var req = {
