@@ -29,32 +29,36 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
-  // $scope.topics = [
-  //   'Outdoors',
-  //   'Tech',
-  //   'Moms',
-  //   'Well-Being',
-  //   'Sports',
-  //   'Education',
-  //   'Photography',
-  //   'Food',
-  //   'Writing',
-  //   'Language',
-  //   'Music',
-  //   'Movements',
-  //   'LGBTQ',
-  //   'Film',
-  //   'Games',
-  //   'Beliefs',
-  //   'Arts',
-  //   'Fashion',
-  //   'Social',
-  //   'Career'
-  // ]
+  $scope.topics = [
+    'Outdoors',
+    'Tech',
+    'Moms',
+    'Well-Being',
+    'Sports',
+    'Education',
+    'Photography',
+    'Food',
+    'Writing',
+    'Language',
+    'Music',
+    'Movements',
+    'LGBTQ',
+    'Film',
+    'Games',
+    'Beliefs',
+    'Arts',
+    'Fashion',
+    'Social',
+    'Career'
+  ]
 
-    $scope.status = {
-    isopen: false
-  };
+  // $scope.status = function() {
+  //   $scope.isopen = false;
+  // };
+
+  $scope.bindTopic = function(topic) {
+    $scope.text = topic;
+  }
 
   $scope.submitCity = function() {
     var req = {
