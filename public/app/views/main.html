@@ -1,5 +1,18 @@
+<h1>This Week</h1>
+
+<div ng-controller="ParentCtrl">
+    <form ng-submit="submitCity()">
+      <div ng-controller="ChildCtrl">
+        <label for="zip">Zip</label>
+        <input name="zip" type="text" ng-model="zip">{{zip}}
+        <label for="radius">Within</label>
+        <input name="radius" type="text" ng-model="radius" value="5"> miles
+      </div>
+      <input type="submit">
+    </form>
+
 <div class="row">
-  <div ng-include="'app/views/header.html'"></div>
+  <!-- <div ng-include="'app/views/header.html'"></div> -->
   <div ng-swipe-left="swipe()">
     <div class="col-sm-4" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
     <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
@@ -15,7 +28,8 @@
 
 </div>
 
-<!-- NEXT: add functionality for ng-swipe-right. Currently, when you swipe left twice in a row, you see what you should be seeing when you swipe right (the original view) -->
+</div>
+
 
 
 <!-- Example -->

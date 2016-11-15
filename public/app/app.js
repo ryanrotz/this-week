@@ -13,7 +13,7 @@ myApp.config([
   .state('home', {
     url: '/',
     templateUrl: 'app/views/main.html',
-    controller: 'HomeCtrl'
+    controller: 'ParentCtrl'
   })
   .state('404', {
     url: '/404',
@@ -23,9 +23,9 @@ myApp.config([
   $locationProvider.html5Mode(true);
 }]);
 
-myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
+myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.zip = '98122';
+  $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -61,11 +61,12 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
   }
 
   $scope.submitCity = function() {
+    // console.log($scope.zip)
     var req = {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
       params: {
-        'zip': $scope.zip,
+        'zip': $scope.zip.one,
         'radius': $scope.radius,
         'text': $scope.text,
         'time': ',1w',
@@ -80,7 +81,6 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
       console.log(res);
       // console.log(data2);
   }, function error(res) {
-
       console.log(res);
     });
   };
@@ -102,6 +102,8 @@ myApp.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.showMore = !$scope.showMore;
   };
 
-
 }]);
 
+myApp.controller('ChildCtrl', ['$scope', '$http', function($scope, $http) {
+
+}]);
