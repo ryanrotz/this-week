@@ -66,7 +66,7 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
       params: {
-        'zip': $scope.zip.one,
+        'zip': $scope.zip,
         'radius': $scope.radius,
         'text': $scope.text,
         'time': ',1w',
