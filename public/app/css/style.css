@@ -1,4 +1,30 @@
+a, a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
 
-a {
-  color: green;
+.meetup-group-name {
+  text-transform: uppercase;
+  color: rgba(0,0,0,.54);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -.02em;
+  word-spacing: .1em;
+}
+
+.meetup-name {
+  color: black;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 500;   
+  letter-spacing: -.02em;
+}
+
+.meetup-name
+
+.attendee-count {
+  font-size: 16px;
+  color: rgba(0,0,0,.54);;
 }
