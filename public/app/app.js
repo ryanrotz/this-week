@@ -23,9 +23,15 @@ myApp.config([
   $locationProvider.html5Mode(true);
 }]);
 
-myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
+myApp.factory('zipFactory', function() {
+  return {
+    zipcode : ''
+  };
+});
 
-  $scope.zip = '';
+myApp.controller('ParentCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
+
+  $scope.zip = zipFactory.zipcode;
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -102,7 +108,6 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
 
 myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -163,7 +168,6 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
 
 myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -223,7 +227,6 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
 
 myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -283,7 +286,6 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
 
 myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -343,7 +345,6 @@ myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
 
 myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
