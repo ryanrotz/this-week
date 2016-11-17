@@ -1,22 +1,24 @@
 <h1>This Week</h1>
 
 <div ng-controller="ParentCtrl">
+    <!-- Make this section into a service or factory and import that into the column controllers -->
     <form ng-submit="submitCity()">
-      <div ng-controller="ChildCtrl">
         <label for="zip">Zip</label>
         <input name="zip" type="text" ng-model="zip">{{zip}}
         <label for="radius">Within</label>
         <input name="radius" type="text" ng-model="radius" value="5"> miles
-      </div>
       <input type="submit">
     </form>
 
 <div class="row">
   <!-- <div ng-include="'app/views/header.html'"></div> -->
   <div ng-swipe-left="swipe()">
-    <div class="col-sm-4" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
-    <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
-    <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-include="'app/views/column.html'"></div>
+    <!-- add CTRL for column 1 -->
+    <div class="col-sm-4" ng-show="!showMe" ng-controller="ColumnOneCtrl" ng-include="'app/views/column.html'"></div>
+    <!-- add CTRL for column 2 -->
+    <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnTwoCtrl" ng-include="'app/views/column.html'"></div>
+    <!-- add CTRL for column 3 -->
+    <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnThreeCtrl" ng-include="'app/views/column.html'"></div>
 <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
   </div>
 
