@@ -52,10 +52,6 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
     'Career'
   ]
 
-  // $scope.status = function() {
-  //   $scope.isopen = false;
-  // };
-
   $scope.bindTopic = function(topic) {
     $scope.text = topic;
   }
@@ -162,23 +158,6 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
     });
   };
 
- $scope.showActions = false;
-  
-  $scope.someFunction = function(){
-    $scope.showActions = !$scope.showActions;
-  };
-
-  
-  $scope.showMe = false;
-  $scope.showMore = true;
-
-  $scope.swipe = function(){
-    // columns move to the left
-    // the column on the right appears
-    $scope.showMe = !$scope.showMe;
-    $scope.showMore = !$scope.showMore;
-  };
-
 }]);
 
 
@@ -238,23 +217,6 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
   }, function error(res) {
       console.log(res);
     });
-  };
-
- $scope.showActions = false;
-  
-  $scope.someFunction = function(){
-    $scope.showActions = !$scope.showActions;
-  };
-
-  
-  $scope.showMe = false;
-  $scope.showMore = true;
-
-  $scope.swipe = function(){
-    // columns move to the left
-    // the column on the right appears
-    $scope.showMe = !$scope.showMe;
-    $scope.showMore = !$scope.showMore;
   };
 
 }]);
@@ -317,21 +279,124 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
     });
   };
 
- $scope.showActions = false;
-  
-  $scope.someFunction = function(){
-    $scope.showActions = !$scope.showActions;
+}]);
+
+myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.zip = '';
+  $scope.radius = '5';
+  $scope.text = '';
+  $scope.meetups = [];
+  $scope.topics = [
+    'Outdoors',
+    'Tech',
+    'Moms',
+    'Well-Being',
+    'Sports',
+    'Education',
+    'Photography',
+    'Food',
+    'Writing',
+    'Language',
+    'Music',
+    'Movements',
+    'LGBTQ',
+    'Film',
+    'Games',
+    'Beliefs',
+    'Arts',
+    'Fashion',
+    'Social',
+    'Career'
+  ]
+
+  $scope.bindTopic = function(topic) {
+    $scope.text = topic;
+  }
+
+  $scope.submitCity = function() {
+
+    var req = {
+      url: 'https://api.meetup.com/2/open_events.json?',
+      method: 'GET',
+      params: {
+        'zip': $scope.zip,
+        'radius': $scope.radius,
+        'text': $scope.text,
+        'time': ',1w',
+        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        // page: 10
+        // key: process.env.MEETUP_SECRET
+      }
+    }
+
+  $http(req).then(function success(res) {
+     $scope.meetups = res.data.results;
+      console.log(res);
+      // console.log(data2);
+  }, function error(res) {
+      console.log(res);
+    });
   };
 
-  
-  $scope.showMe = false;
-  $scope.showMore = true;
+}]);
 
-  $scope.swipe = function(){
-    // columns move to the left
-    // the column on the right appears
-    $scope.showMe = !$scope.showMe;
-    $scope.showMore = !$scope.showMore;
+myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.zip = '';
+  $scope.radius = '5';
+  $scope.text = '';
+  $scope.meetups = [];
+  $scope.topics = [
+    'Outdoors',
+    'Tech',
+    'Moms',
+    'Well-Being',
+    'Sports',
+    'Education',
+    'Photography',
+    'Food',
+    'Writing',
+    'Language',
+    'Music',
+    'Movements',
+    'LGBTQ',
+    'Film',
+    'Games',
+    'Beliefs',
+    'Arts',
+    'Fashion',
+    'Social',
+    'Career'
+  ]
+
+  $scope.bindTopic = function(topic) {
+    $scope.text = topic;
+  }
+
+  $scope.submitCity = function() {
+
+    var req = {
+      url: 'https://api.meetup.com/2/open_events.json?',
+      method: 'GET',
+      params: {
+        'zip': $scope.zip,
+        'radius': $scope.radius,
+        'text': $scope.text,
+        'time': ',1w',
+        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        // page: 10
+        // key: process.env.MEETUP_SECRET
+      }
+    }
+
+  $http(req).then(function success(res) {
+     $scope.meetups = res.data.results;
+      console.log(res);
+      // console.log(data2);
+  }, function error(res) {
+      console.log(res);
+    });
   };
 
 }]);

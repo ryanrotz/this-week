@@ -23,9 +23,9 @@
   </div>
 
   <div ng-swipe-right="swipe()">
-    <div class="col-sm-4" ng-hide="showMore" ng-include="'app/views/column.html'"></div>
+    <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFourCtrl" ng-include="'app/views/column.html'"></div>
     <!-- delete this column below. It's just there to show you it's working -->
-    <div class="col-sm-4" ng-hide="showMore" ng-include="'app/views/column.html'"></div>
+    <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFiveCtrl" ng-include="'app/views/column.html'"></div>
   </div>
 
 </div>
