@@ -2,12 +2,10 @@
 
 <div ng-controller="ParentCtrl">
     <!-- Make this section into a service or factory and import that into the column controllers -->
-    <form ng-submit="submitCity()">
         <label for="zip">Zip</label>
-        <input name="zip" type="text" ng-model="zip">{{zip}}
+        <input name="zip" type="text" ng-model="zip">
         <label for="radius">Within</label>
         <input name="radius" type="text" ng-model="radius" value="5"> miles
-      <input type="submit">
     </form>
 
 <div class="row">
