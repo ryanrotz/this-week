@@ -1,8 +1,8 @@
 <!-- Column of meetups -->
 
     <div uib-dropdown>
-      <label for="text">Topic</label>
-      <input type="text" name="text" ng-model="text" placeholder="i.e. Tech" id="simple-dropdown" uib-dropdown-toggle>
+      <label class="topic-label" for="text">Topic</label>
+      <input class="topic-field" type="text" name="text" ng-model="text" placeholder="i.e. Tech" id="simple-dropdown" uib-dropdown-toggle>
         <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
           <li ng-repeat="topic in topics">
             <a ng-click="bindTopic(topic)">{{topic}}</a>
