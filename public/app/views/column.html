@@ -1,14 +1,14 @@
 <!-- Column of meetups -->
 
     <div uib-dropdown>
-      <label class="topic-label" for="text">Topic</label>
-      <input class="topic-field" type="text" name="text" ng-model="text" placeholder="i.e. Tech" id="simple-dropdown" uib-dropdown-toggle>
-        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-          <li ng-repeat="topic in topics">
-            <a ng-click="bindTopic(topic)">{{topic}}</a>
-          </li>
-        </ul>
-      <button class="search btn" ng-click="submitCity()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      <!-- <label class="topic-label" for="text">Topic</label> -->
+      <input class="topic-field" type="text" name="text" ng-model="text" placeholder="Enter a topic" id="simple-dropdown" uib-dropdown-toggle>
+      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+        <li ng-repeat="topic in topics">
+          <a ng-click="bindTopic(topic)">{{topic}}</a>
+        </li>
+      </ul>
+      <a class="search" ng-click="submitCity()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
     </div>
 
     <div ng-repeat="meetup in meetups" class="column">

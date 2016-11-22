@@ -1,5 +1,16 @@
 body {
+  /*background-color: #fafafa;*/
+}
+
+.header {
+  height: 300px;
+  background-color: white;
+  text-align: center;
+}
+
+.columns {
   background-color: #fafafa;
+  height: 600px;
 }
 
 .column {
@@ -19,24 +30,26 @@ body {
   font-size: 17px;
 }
 
-
 .search {
-  background-color: #ed1c40;
-  border-radius: 95%;
-  box-shadow:    2px 2px 0 0 #cdc2c2;
-  color:         #fff;
-  display:       inline-block;
-  padding:       8px 11px;
-  text-align:    center;
+  /*background-color: #ed1c40;*/
+  /*border-radius: 95%;*/
+  /*box-shadow:    2px 2px 0 0 #cdc2c2;*/
+  /*color:         #fff;*/
+  /*display:       inline-block;*/
+  /*padding:       8px 11px;*/
+  /*text-align:    center;*/
   /*text-shadow:   1px 1px 0 #000;*/
+  position: relative;
+  left: -30px;
 }
 
 .search:focus, .search:hover, .search:active, .search.active, .search:focus:active {
-  background-image: none;
+  /*background-image: none;
   outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: 2px 2px 0 0 #cdc2c2;
-  color: #fff;
+  -webkit-box-shadow: none;*/
+  /*box-shadow: 2px 2px 0 0 #cdc2c2;*/
+  /*color: #fff;*/
+  color: #ed1c40;
 }
 
 .event {
