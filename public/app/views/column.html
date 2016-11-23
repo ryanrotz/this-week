@@ -1,6 +1,6 @@
 <!-- Column of meetups -->
 
-    <div uib-dropdown>
+    <div uib-dropdown class="enter-topic">
       <!-- <label class="topic-label" for="text">Topic</label> -->
       <input class="topic-field" type="text" name="text" ng-model="text" placeholder="Enter a topic" id="simple-dropdown" uib-dropdown-toggle>
       <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
@@ -9,6 +9,12 @@
         </li>
       </ul>
       <a class="search" ng-click="submitCity()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+      <span class="white-text">Within </span>
+      <!-- code for radius -->
+      <input class="radius" type="text" inputmode="numeric" ng-model="radius" value="5">
+      <span class="white-text">miles of </span>
+      <!-- code for zip -->
+      <input class="zip" type="text" inputmode="numeric" autocomplete="postal-code" ng-model="zip">
     </div>
 
     <div ng-repeat="meetup in meetups" class="column">

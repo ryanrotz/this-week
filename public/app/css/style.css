@@ -20,14 +20,20 @@ body {
   /*border-bottom: 1px solid black;*/
 }
 
+.enter-topic {
+  background-color: black;
+}
+
 .topic-label {
   font-size: 16px;
 }
 
 .topic-field {
-  width: 300px;
+  width: 190px;
   height: 37px;
   font-size: 17px;
+  padding-left: 10px;
+  margin: 10px 0px 10px 10px;
 }
 
 .search {
@@ -50,6 +56,34 @@ body {
   /*box-shadow: 2px 2px 0 0 #cdc2c2;*/
   /*color: #fff;*/
   color: #ed1c40;
+}
+
+.radius {
+  color: white;
+  width: 20px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  margin-left: 3px;
+}
+
+.radius:hover, .radius:active, .radius:focus, .zip:hover, .zip:active, .zip:focus {
+  border-color: #ed1c40;
+}
+
+.zip {
+  color: white;
+  width: 45px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  margin-left: 3px;
+}
+
+.white-text {
+  color: white;
 }
 
 .event {

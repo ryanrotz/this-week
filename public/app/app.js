@@ -25,7 +25,7 @@ myApp.config([
 
 myApp.factory('zipFactory', function() {
   return {
-    zipcode : ''
+    zipcode : '98122'
   };
 });
 
