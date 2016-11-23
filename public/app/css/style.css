@@ -58,6 +58,12 @@ body {
   color: #ed1c40;
 }
 
+.location-area {
+  display: inline-block;
+  position: relative;
+  left: -4px;
+}
+
 .radius {
   color: white;
   width: 20px;
