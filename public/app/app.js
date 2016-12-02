@@ -25,73 +25,69 @@ myApp.config([
 
 myApp.factory('zipFactory', function() {
   return {
-    zipcode : '98122'
+    zipcode : '98225'
   };
 });
 
 myApp.controller('ParentCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
 
-  $scope.zip = zipFactory.zipcode;
-  $scope.radius = '5';
-  $scope.text = '';
-  $scope.meetups = [];
-  $scope.topics = [
-    'Outdoors',
-    'Tech',
-    'Moms',
-    'Well-Being',
-    'Sports',
-    'Education',
-    'Photography',
-    'Food',
-    'Writing',
-    'Language',
-    'Music',
-    'Movements',
-    'LGBTQ',
-    'Film',
-    'Games',
-    'Beliefs',
-    'Arts',
-    'Fashion',
-    'Social',
-    'Career'
-  ]
+  $scope.zipcode = '';
+  // $scope.zip = zipFactory.zipcode;
+  // $scope.radius = '5';
+  // $scope.text = '';
+  // $scope.meetups = [];
+  // $scope.topics = [
+  //   'Outdoors',
+  //   'Tech',
+  //   'Moms',
+  //   'Well-Being',
+  //   'Sports',
+  //   'Education',
+  //   'Photography',
+  //   'Food',
+  //   'Writing',
+  //   'Language',
+  //   'Music',
+  //   'Movements',
+  //   'LGBTQ',
+  //   'Film',
+  //   'Games',
+  //   'Beliefs',
+  //   'Arts',
+  //   'Fashion',
+  //   'Social',
+  //   'Career'
+  // ]
 
-  $scope.bindTopic = function(topic) {
-    $scope.text = topic;
-  }
+  // $scope.bindTopic = function(topic) {
+  //   $scope.text = topic;
+  // }
 
-  $scope.submitCity = function() {
+  // $scope.submitCity = function() {
 
-    var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
-        'zip': $scope.zip,
-        'radius': $scope.radius,
-        'text': $scope.text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
-      }
-    }
+  //   var req = {
+  //     url: 'https://api.meetup.com/2/open_events.json?',
+  //     method: 'GET',
+  //     params: {
+  //       'zip': $scope.zip,
+  //       'radius': $scope.radius,
+  //       'text': $scope.text,
+  //       'time': ',1w',
+  //       'key': '6e3f56396c8665c5e6e5d4d78653828'
+  //       // page: 10
+  //       // key: process.env.MEETUP_SECRET
+  //     }
+  //   }
 
-  $http(req).then(function success(res) {
-     $scope.meetups = res.data.results;
-      console.log(res);
-      // console.log(data2);
-  }, function error(res) {
-      console.log(res);
-    });
-  };
+  // $http(req).then(function success(res) {
+  //    $scope.meetups = res.data.results;
+  //     console.log(res);
+  //     // console.log(data2);
+  // }, function error(res) {
+  //     console.log(res);
+  //   });
+  // };
 
- $scope.showActions = false;
-  
-  $scope.someFunction = function(){
-    $scope.showActions = !$scope.showActions;
-  };
 
   
   $scope.showMe = false;
@@ -106,8 +102,80 @@ myApp.controller('ParentCtrl', ['$scope', '$http', 'zipFactory', function($scope
 
 }]);
 
-myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
+myApp.controller('ColumnOneCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
 
+  // $scope.zip = zipFactory.zipcode;
+  // console.log(zipFactory.zipcode)
+  // $scope.awesome = '';
+  // $scope.zipcode = '';
+
+  $scope.radius = '5';
+  $scope.text = '';
+  $scope.meetups = [];
+  $scope.topics = [
+    'Outdoors',
+    'Tech',
+    'Moms',
+    'Well-Being',
+    'Sports',
+    'Education',
+    'Photography',
+    'Food',
+    'Writing',
+    'Language',
+    'Music',
+    'Movements',
+    'LGBTQ',
+    'Film',
+    'Games',
+    'Beliefs',
+    'Arts',
+    'Fashion',
+    'Social',
+    'Career'
+  ]
+
+  $scope.bindTopic = function(topic) {
+    $scope.textInput = topic;
+    console.log($scope.text)
+  }
+
+    // console.log("zip is " + $scope.awesome + $scope.zip);
+    // console.log(zipFactory.zipcode)
+    console.log('hey world')
+  $scope.submitCity = function(text, radius, zipcode) {
+    console.log('hey hey')
+    var req = {
+      url: 'https://api.meetup.com/2/open_events.json?',
+      method: 'GET',
+      params: {
+        'zip': zipcode,
+        'radius': radius,
+        'text': text,
+        'time': ',1w',
+        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        // page: 10
+        // key: process.env.MEETUP_SECRET
+      }
+    }
+
+    console.log($scope.zipcode);
+    $http(req).then(function success(res) {
+       $scope.meetups = res.data.results;
+        console.log(res);
+        // console.log(data2);
+    }, function error(res) {
+        console.log(res);
+    });
+  };
+
+}]);
+
+
+myApp.controller('ColumnTwoCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
+
+  $scope.zip = zipFactory.zipcode;
+  // $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -165,9 +233,10 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
+myApp.controller('ColumnThreeCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
 
-myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
-
+  // $scope.zip = zipFactory.zipcode;
+  // $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -225,8 +294,10 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
-myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) {
+myApp.controller('ColumnFourCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
 
+  // $scope.zip = zipFactory.zipcode;
+  // $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
@@ -284,67 +355,10 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
 
 }]);
 
-myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
+myApp.controller('ColumnFiveCtrl', ['$scope', '$http', 'zipFactory', function($scope, $http, zipFactory) {
 
-  $scope.radius = '5';
-  $scope.text = '';
-  $scope.meetups = [];
-  $scope.topics = [
-    'Outdoors',
-    'Tech',
-    'Moms',
-    'Well-Being',
-    'Sports',
-    'Education',
-    'Photography',
-    'Food',
-    'Writing',
-    'Language',
-    'Music',
-    'Movements',
-    'LGBTQ',
-    'Film',
-    'Games',
-    'Beliefs',
-    'Arts',
-    'Fashion',
-    'Social',
-    'Career'
-  ]
-
-  $scope.bindTopic = function(topic) {
-    $scope.text = topic;
-  }
-
-  $scope.submitCity = function() {
-
-    var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
-        'zip': $scope.zip,
-        'radius': $scope.radius,
-        'text': $scope.text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
-      }
-    }
-
-  $http(req).then(function success(res) {
-     $scope.meetups = res.data.results;
-      console.log(res);
-      // console.log(data2);
-  }, function error(res) {
-      console.log(res);
-    });
-  };
-
-}]);
-
-myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
-
+  // $scope.zip = zipFactory.zipcode;
+  // $scope.zip = '';
   $scope.radius = '5';
   $scope.text = '';
   $scope.meetups = [];
