@@ -7,11 +7,12 @@ body {
 }
 
 .header {
-  height: 300px;
+  height: 200px;
   background-color: #ed1c40;
   color: white;
   text-align: center;
   position: relative;
+  border-radius: 5px;
 }
 
 .header-text {
@@ -22,7 +23,7 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -44,6 +45,9 @@ h2 {
 
 .enter-topic {
   background-color: black;
+  text-align: center;
+  margin: 5px 10px;
+  border-radius: 5px;
 }
 
 .topic-label {
@@ -52,8 +56,8 @@ h2 {
 
 .topic-field {
   width: 190px;
-  height: 37px;
-  font-size: 17px;
+  height: 30px;
+  font-size: 14px;
   padding-left: 10px;
   margin: 10px 0px 10px 10px;
 }
@@ -82,7 +86,15 @@ h2 {
   /*box-shadow: 2px 2px 0 0 #cdc2c2;*/
   /*color: #fff;*/
   color: #ed1c40;
+  outline: none;
 }
+
+
+
+.dropdown-menu {
+
+}
+
 
 .location-area {
   display: inline-block;
@@ -120,7 +132,9 @@ h2 {
 
 .event {
   padding: 10px;
+  margin: 0px 10px;
   border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 a, a:active, a:hover, a:link, a:visited {
@@ -151,4 +165,63 @@ a, a:active, a:hover, a:link, a:visited {
   font-size: 15px;
   color: rgba(0,0,0,.54);
   /*font-weight: 100;*/
+}
+
+@media (max-width: 392px) {
+/*  .enter-topic {
+    text-align: center;
+  }*/
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+
+/*.header {
+  height: 200px;
+  background-color: #ed1c40;
+  color: white;
+  text-align: center;
+  position: relative;
+}*/
+
+.header-text {
+/*  position: absolute;
+  top: 50%;*/
+  left: 20%;
+  transform: translate(-13%, -50%);
+}
+
+h1 {
+  font-size: 30px;
+  /*text-align: center;*/
+}
+
+h2 {
+  font-size: 12px;
+}
+
+.topic-field {
+  width: 150px;
+}
+
+}
+
+/* Small screens */
+@media (min-width: 577px) and (max-width: 768px) {
+
+}
+
+/* Medium screens */
+@media (min-width: 769px) and (max-width: 992px) {
+
+}
+
+/* Large screens */
+@media (min-width: 993px) and (max-width: 1200px) {
+
+}
+
+/* Extra large screens */
+@media (min-width: 1201px) {
+
 }
