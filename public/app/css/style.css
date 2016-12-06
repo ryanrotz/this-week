@@ -45,7 +45,7 @@ h2 {
 
 .enter-topic {
   background-color: black;
-  /*text-align: center;*/
+  text-align: center;
   margin: 5px 10px;
   border-radius: 5px;
 }
@@ -55,7 +55,7 @@ h2 {
 }
 
 .topic-field {
-  width: 190px;
+  width: 150px;
   height: 30px;
   font-size: 14px;
   padding-left: 10px;
@@ -167,77 +167,118 @@ a, a:active, a:hover, a:link, a:visited {
   /*font-weight: 100;*/
 }
 
-@media (max-width: 392px) {
-  .enter-topic {
-    text-align: center;
+@media all and (max-width: 392px) {
+
+  .header-text {
+    left: 20%;
+    transform: translate(-13%, -50%);
   }
 
-  .dropdown-menu {
-  position: absolute;
-  left: 30px;
-}
+  h1 {
+    font-size: 30px;
+  }
 
-.topic-field {
-  width: 130px;
-  height: 30px;
-  font-size: 14px;
-  padding-left: 10px;
-  margin: 10px 0px 10px 10px;
-}
+  h2 {
+    font-size: 12px;
+  }
 
+  .enter-topic {
+    text-align: center;
+    }
+
+  .topic-field {
+    width: 130px;
+  }
 }
 
 /* Extra small screens */
-@media (max-width: 576px) {
+@media all and (min-width: 393px) and (max-width: 576px) {
 
-/*.header {
-  height: 200px;
-  background-color: #ed1c40;
-  color: white;
-  text-align: center;
-  position: relative;
-}*/
+  .header-text {
+    left: 20%;
+    transform: translate(-13%, -50%);
+  }
 
-.header-text {
-/*  position: absolute;
-  top: 50%;*/
-  left: 20%;
-  transform: translate(-13%, -50%);
-}
+  h1 {
+    font-size: 30px;
+  }
 
-h1 {
-  font-size: 30px;
-  /*text-align: center;*/
-}
+  h2 {
+    font-size: 12px;
+  }
 
-h2 {
-  font-size: 12px;
-}
-
-.topic-field {
-  width: 150px;
-}
-
-
-
+  .topic-field {
+    width: 170px;
+  }
 }
 
 /* Small screens */
-@media (min-width: 577px) and (max-width: 768px) {
+@media (min-width: 577px) and (max-width: 767px) {
 
+  .header-text {
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  .topic-field {
+    width: 340px;
+  }
 }
 
 /* Medium screens */
-@media (min-width: 769px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
 
+  .header-text {
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .enter-topic {
+      text-align: center;
+    }
+
+  .topic-field {
+    width: 170px;
+    margin-left: 18px;
+  }
 }
 
 /* Large screens */
 @media (min-width: 993px) and (max-width: 1200px) {
 
+  .header-text {
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .enter-topic {
+      text-align: center;
+    }
+
+  .topic-field {
+    width: 220px;
+    margin-left: 18px;
+  }
 }
 
-/* Extra large screens */
-@media (min-width: 1201px) {
-
-}
