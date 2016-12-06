@@ -45,7 +45,7 @@ h2 {
 
 .enter-topic {
   background-color: black;
-  text-align: center;
+  /*text-align: center;*/
   margin: 5px 10px;
   border-radius: 5px;
 }
@@ -92,7 +92,7 @@ h2 {
 
 
 .dropdown-menu {
-
+  /*left: 7em;*/
 }
 
 
@@ -168,9 +168,23 @@ a, a:active, a:hover, a:link, a:visited {
 }
 
 @media (max-width: 392px) {
-/*  .enter-topic {
+  .enter-topic {
     text-align: center;
-  }*/
+  }
+
+  .dropdown-menu {
+  position: absolute;
+  left: 30px;
+}
+
+.topic-field {
+  width: 130px;
+  height: 30px;
+  font-size: 14px;
+  padding-left: 10px;
+  margin: 10px 0px 10px 10px;
+}
+
 }
 
 /* Extra small screens */
@@ -203,6 +217,8 @@ h2 {
 .topic-field {
   width: 150px;
 }
+
+
 
 }
 

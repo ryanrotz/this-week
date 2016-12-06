@@ -77,6 +77,8 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
     'Career'
   ]
 
+  // $scope.appendToEl = angular.element(document.querySelector('#inputCtn'));
+
   $scope.bindTopic = function(topic) {
     $scope.textInput = topic;
     console.log($scope.text)
