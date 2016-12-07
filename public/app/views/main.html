@@ -7,9 +7,21 @@
     </div>
    </div> 
 
+    <!-- ng-swipe-left/right -->
+    <!-- ng-show=!"showMe" -->
+    <!-- ng-hide="showMore" -->
+    <!-- hidden-xs -->
+
+
+
+<!-- code for medium screens and larger (768px and larger) -->
+<!-- At first, you see three columns. Swipe right and you see another 3 columns -->
+<!-- Figure out a way to only display this code when screen is 768px or higher -->
+<!-- Idea: use two html documents. One shows at 768px or higher. -->
+
   <div class="columns">
     <div class="row">
-      
+
       <div ng-swipe-left="swipe()">
 
         <div class="col-sm-4" ng-show="!showMe" ng-controller="ColumnOneCtrl" ng-include="'app/views/column.html'"></div>
@@ -33,7 +45,69 @@
 
      </div> 
   </div>
-</div>
+
+<!-- code for small screens (767px and smaller) -->
+<!-- At first you see one column. Swipe left to see another column (up to 6 total) or swipe right to see previous column -->
+<!-- How do I keep showing new columns with swipe? Nesting? pagination -->
+
+  <div class="columns" visible-xs-block>
+    <div class="row">
+
+      <div ng-swipe-left="swipe()">
+
+        <div class="col-sm-4" ng-show="!showMe" ng-controller="ColumnOneCtrl" ng-include="'app/views/column.html'"></div>
+
+      </div>
+
+    <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
+      
+      <div ng-swipe-right="swipe()">
+
+        <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFourCtrl" ng-include="'app/views/column.html'"></div>
+
+        <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFiveCtrl" ng-include="'app/views/column.html'"></div>
+
+        <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnSixCtrl" ng-include="'app/views/column.html'"></div>
+
+      </div>
+
+     </div> 
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- endig Parent Controller div  -->
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -47,22 +121,4 @@
     <button ng-click="delete()">Delete</button>
   </div> -->
 
-
-
-
-<!-- Example to test if Angular UI Bootstrap is working -->
-<!--   <h4>Single toggle</h4>
-    <pre>{{singleModel}}</pre>
-    <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
-        Single Toggle
-    </button>
-    <span uib-dropdown on-toggle="toggled(open)">
-      <a href id="simple-dropdown" uib-dropdown-toggle>
-        Click me for a dropdown, yo!
-      </a>
-      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-        <li>{{1 + 1}}</li>
-        <li>Something cool</li>
-      </ul>
-    </span> -->
 
