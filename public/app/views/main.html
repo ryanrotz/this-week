@@ -9,19 +9,20 @@
 
   <div class="columns">
     <div class="row">
-      <!-- <div ng-include="'app/views/header.html'"></div> -->
+      
       <div ng-swipe-left="swipe()">
-        <!-- add CTRL for column 1 -->
+
         <div class="col-sm-4" ng-show="!showMe" ng-controller="ColumnOneCtrl" ng-include="'app/views/column.html'"></div>
-        <!-- add CTRL for column 2 -->
+
         <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnTwoCtrl" ng-include="'app/views/column.html'"></div>
-        <!-- add CTRL for column 3 -->
+
         <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnThreeCtrl" ng-include="'app/views/column.html'"></div>
-    <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
       </div>
 
-      <div ng-swipe-right="swipe()">
+    <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
       
+      <div ng-swipe-right="swipe()">
+
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFourCtrl" ng-include="'app/views/column.html'"></div>
 
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFiveCtrl" ng-include="'app/views/column.html'"></div>
@@ -29,6 +30,7 @@
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnSixCtrl" ng-include="'app/views/column.html'"></div>
 
       </div>
+
      </div> 
   </div>
 </div>
