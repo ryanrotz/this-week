@@ -77,8 +77,6 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
     'Career'
   ]
 
-  // $scope.appendToEl = angular.element(document.querySelector('#inputCtn'));
-
   $scope.bindTopic = function(topic) {
     $scope.textInput = topic;
     console.log($scope.text)
@@ -92,7 +90,6 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
 // })
 
   $scope.submitCity = function(text, radius, zipcode) {
-    console.log('hey hey')
     var req = {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
@@ -110,10 +107,7 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
     console.log($scope.zipcode);
     $http(req).then(function success(res) {
        $scope.meetups = res.data.results;
-        console.log(res);
-        // console.log(data2);
     }, function error(res) {
-        console.log(res);
     });
   };
 
@@ -121,11 +115,10 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
 
 
 myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
-
-
-  // $scope.zip = '';
-  $scope.radius = '5';
+  
   $scope.text = '';
+  $scope.radius = '5';
+  $scope.zipcode = '98122'
   $scope.meetups = [];
   $scope.topics = [
     'Outdoors',
@@ -151,18 +144,18 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
   ]
 
   $scope.bindTopic = function(topic) {
-    $scope.text = topic;
+    $scope.textInput = topic;
+    console.log($scope.text)
   }
 
-  $scope.submitCity = function() {
-
+  $scope.submitCity = function(text, radius, zipcode) {
     var req = {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
       params: {
-        'zip': $scope.zip,
-        'radius': $scope.radius,
-        'text': $scope.text,
+        'zip': zipcode,
+        'radius': radius,
+        'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
         // page: 10
@@ -170,22 +163,19 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
       }
     }
 
-  $http(req).then(function success(res) {
-     $scope.meetups = res.data.results;
-      console.log(res);
-      // console.log(data2);
-  }, function error(res) {
-      console.log(res);
+    console.log($scope.zipcode);
+    $http(req).then(function success(res) {
+       $scope.meetups = res.data.results;
+    }, function error(res) {
     });
   };
-
 }]);
 
 myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) {
 
-  // $scope.zip = '';
-  $scope.radius = '5';
   $scope.text = '';
+  $scope.radius = '5';
+  $scope.zipcode = '98122'
   $scope.meetups = [];
   $scope.topics = [
     'Outdoors',
@@ -211,18 +201,18 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
   ]
 
   $scope.bindTopic = function(topic) {
-    $scope.text = topic;
+    $scope.textInput = topic;
+    console.log($scope.text)
   }
 
-  $scope.submitCity = function() {
-
+  $scope.submitCity = function(text, radius, zipcode) {
     var req = {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
       params: {
-        'zip': $scope.zip,
-        'radius': $scope.radius,
-        'text': $scope.text,
+        'zip': zipcode,
+        'radius': radius,
+        'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
         // page: 10
@@ -230,22 +220,19 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
       }
     }
 
-  $http(req).then(function success(res) {
-     $scope.meetups = res.data.results;
-      console.log(res);
-      // console.log(data2);
-  }, function error(res) {
-      console.log(res);
+    console.log($scope.zipcode);
+    $http(req).then(function success(res) {
+       $scope.meetups = res.data.results;
+    }, function error(res) {
     });
   };
-
 }]);
 
 myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
 
-  // $scope.zip = '';
-  $scope.radius = '5';
   $scope.text = '';
+  $scope.radius = '5';
+  $scope.zipcode = '98122'
   $scope.meetups = [];
   $scope.topics = [
     'Outdoors',
@@ -271,18 +258,18 @@ myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
   ]
 
   $scope.bindTopic = function(topic) {
-    $scope.text = topic;
+    $scope.textInput = topic;
+    console.log($scope.text)
   }
 
-  $scope.submitCity = function() {
-
+  $scope.submitCity = function(text, radius, zipcode) {
     var req = {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
       params: {
-        'zip': $scope.zip,
-        'radius': $scope.radius,
-        'text': $scope.text,
+        'zip': zipcode,
+        'radius': radius,
+        'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
         // page: 10
@@ -290,12 +277,10 @@ myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
       }
     }
 
-  $http(req).then(function success(res) {
-     $scope.meetups = res.data.results;
-      console.log(res);
-      // console.log(data2);
-  }, function error(res) {
-      console.log(res);
+    console.log($scope.zipcode);
+    $http(req).then(function success(res) {
+       $scope.meetups = res.data.results;
+    }, function error(res) {
     });
   };
 
@@ -303,9 +288,9 @@ myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
 
 myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
 
-  // $scope.zip = '';
-  $scope.radius = '5';
   $scope.text = '';
+  $scope.radius = '5';
+  $scope.zipcode = '98122'
   $scope.meetups = [];
   $scope.topics = [
     'Outdoors',
@@ -331,18 +316,18 @@ myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
   ]
 
   $scope.bindTopic = function(topic) {
-    $scope.text = topic;
+    $scope.textInput = topic;
+    console.log($scope.text)
   }
 
-  $scope.submitCity = function() {
-
+  $scope.submitCity = function(text, radius, zipcode) {
     var req = {
       url: 'https://api.meetup.com/2/open_events.json?',
       method: 'GET',
       params: {
-        'zip': $scope.zip,
-        'radius': $scope.radius,
-        'text': $scope.text,
+        'zip': zipcode,
+        'radius': radius,
+        'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
         // page: 10
@@ -350,12 +335,68 @@ myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
       }
     }
 
-  $http(req).then(function success(res) {
-     $scope.meetups = res.data.results;
-      console.log(res);
-      // console.log(data2);
-  }, function error(res) {
-      console.log(res);
+    console.log($scope.zipcode);
+    $http(req).then(function success(res) {
+       $scope.meetups = res.data.results;
+    }, function error(res) {
+    });
+  };
+
+}]);
+
+myApp.controller('ColumnSixCtrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.text = '';
+  $scope.radius = '5';
+  $scope.zipcode = '98122'
+  $scope.meetups = [];
+  $scope.topics = [
+    'Outdoors',
+    'Tech',
+    'Moms',
+    'Well-Being',
+    'Sports',
+    'Education',
+    'Photography',
+    'Food',
+    'Writing',
+    'Language',
+    'Music',
+    'Movements',
+    'LGBTQ',
+    'Film',
+    'Games',
+    'Beliefs',
+    'Arts',
+    'Fashion',
+    'Social',
+    'Career'
+  ]
+
+  $scope.bindTopic = function(topic) {
+    $scope.textInput = topic;
+    console.log($scope.text)
+  }
+
+  $scope.submitCity = function(text, radius, zipcode) {
+    var req = {
+      url: 'https://api.meetup.com/2/open_events.json?',
+      method: 'GET',
+      params: {
+        'zip': zipcode,
+        'radius': radius,
+        'text': text,
+        'time': ',1w',
+        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        // page: 10
+        // key: process.env.MEETUP_SECRET
+      }
+    }
+
+    console.log($scope.zipcode);
+    $http(req).then(function success(res) {
+       $scope.meetups = res.data.results;
+    }, function error(res) {
     });
   };
 

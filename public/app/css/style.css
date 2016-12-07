@@ -32,8 +32,9 @@ h2 {
 }
 
 .columns {
-  background-color: #fafafa;
-  height: 600px;
+  /*background-color: #fafafa;*/
+  /*height: 600px;*/
+  padding-bottom: 30px;
 }
 
 .column {
