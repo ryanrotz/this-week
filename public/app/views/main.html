@@ -19,7 +19,7 @@
 <!-- Figure out a way to only display this code when screen is 768px or higher -->
 <!-- Idea: use two html documents. One shows at 768px or higher. -->
 
-  <div class="columns">
+<!--   <div class="columns">
     <div class="row">
 
       <div ng-swipe-left="swipe()">
@@ -29,11 +29,11 @@
         <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnTwoCtrl" ng-include="'app/views/column.html'"></div>
 
         <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnThreeCtrl" ng-include="'app/views/column.html'"></div>
-      </div>
+      </div> -->
 
     <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
       
-      <div ng-swipe-right="swipe()">
+<!--       <div ng-swipe-right="swipe()">
 
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFourCtrl" ng-include="'app/views/column.html'"></div>
 
@@ -44,24 +44,25 @@
       </div>
 
      </div> 
-  </div>
+  </div> -->
+
 
 <!-- code for small screens (767px and smaller) -->
 <!-- At first you see one column. Swipe left to see another column (up to 6 total) or swipe right to see previous column -->
 <!-- How do I keep showing new columns with swipe? Nesting? pagination -->
 
-  <div class="columns" visible-xs-block>
+<!--   <div class="columns" visible-xs-block>
     <div class="row">
 
       <div ng-swipe-left="swipe()">
 
         <div class="col-sm-4" ng-show="!showMe" ng-controller="ColumnOneCtrl" ng-include="'app/views/column.html'"></div>
 
-      </div>
+      </div> -->
 
     <!-- add "hidden-xs" as a class to make it disappear when the screen is small -->
       
-      <div ng-swipe-right="swipe()">
+<!--       <div ng-swipe-right="swipe()">
 
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFourCtrl" ng-include="'app/views/column.html'"></div>
 
@@ -72,10 +73,23 @@
       </div>
 
      </div> 
-  </div>
+  </div> -->
 
 
+<!-- Slider code -->
+<div class="container slider"> 
+    <a class="arrow prev" href="#" ng-click="nextCol()">  <<<<<<<  </a>
+    <a class="arrow next" href="#" ng-click="prevCol()">  >>>>>>>  </a>
 
+    <div ng-repeat="col in cols" class="" ng-swipe-right="nextCol()" ng-swipe-left="prevCol()" ng-hide="!isCurrentIndex($index)" ng-include="col.content"></div>
+
+    <nav class="nav">
+    <ul>
+    <li ng-repeat="col in cols"><div ng-class="{'active':isCurrentIndex($index)}" ng-click="setCurrentIndex($index)"></div></li>
+    </ul>
+    </nav>
+
+</div>
 
 
 

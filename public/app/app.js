@@ -1,5 +1,5 @@
 
-var myApp = angular.module('ThisWeekApp', ['ui.router', 'ngAnimate', 'ngTouch', 'ui.bootstrap']);
+var myApp = angular.module('ThisWeekApp', ['ui.router', 'ngAnimate', 'ngTouch', 'ui.bootstrap', 'ngSanitize']);
 
 myApp.config([
   '$stateProvider', 
@@ -30,6 +30,36 @@ myApp.config([
 // });
 
 myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.cols = [
+  // create separate html documents which have ng-controller="ColumnOneCtrl" and two, three, etc.
+    {content: 'app/views/columns/column1.html'},
+    {content: 'app/views/columns/column2.html'},
+    {content: 'app/views/columns/column3.html'},
+    {content: 'app/views/columns/column4.html'},
+    {content: 'app/views/columns/column5.html'},
+    {content: 'app/views/columns/column6.html'}
+    ];
+
+  $scope.currentIndex = 0;
+
+  $scope.setCurrentIndex = function(index) {
+    $scope.currentIndex = index;
+  };
+
+  $scope.isCurrentIndex = function(index) {
+    return $scope.currentIndex === index;
+  };
+
+  $scope.prevCol = function() {
+    ($scope.currentIndex < $scope.cols.length - 1) ? ++$scope.currentIndex : 0;
+  };
+
+  $scope.nextCol = function() {
+    $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.cols.length - 1;
+  };
+
+
 
 // Necessary for parent/child controllers
   $scope.radius = '';
