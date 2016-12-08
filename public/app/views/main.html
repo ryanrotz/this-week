@@ -13,9 +13,9 @@
   and
   http://onehungrymind.com/build-sweet-angularjs-photo-slider-pt-2-ngtouch/ -->
     <div>
-        <a class="block left-arrow" href="#" ng-click="nextCol()"><i class="material-icons">&#xE5C4;</i></a>
+        <a href="#" ng-click="nextCol()"><i class="material-icons block left-arrow">&#xE5C4;</i></a>
         <span class="block column-counter">{{currentIndex}} / 6</span>
-        <a class="block right-arrow" href="#" ng-click="prevCol()"><i class="material-icons">&#xE5C8;</i></a>
+        <a href="#" ng-click="prevCol()"><i class="material-icons block right-arrow">&#xE5C8;</i></a>
 
         <div ng-repeat="col in cols" class="" ng-hide="!isCurrentIndex($index)" ng-include="col.content"></div>
 
