@@ -32,6 +32,7 @@
 <!-- At first, you see three columns. Swipe right and you see another 3 columns -->
 
 <div ng-controller="ParentCtrl" class="hidden-xs">
+  <div ng-swipe-left="swipe()" ng-swipe-right="swipe()">
   <div class="header">
     <div class="header-text"> 
       <h1>Meetups for every part of your&nbsp;life</h1>
@@ -41,17 +42,15 @@
 
   <div class="columns">
     <div class="row">
-      <div ng-swipe-left="swipe()">
 
         <div class="col-sm-4" ng-show="!showMe" ng-controller="ColumnOneCtrl" ng-include="'app/views/column.html'"></div>
 
         <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnTwoCtrl" ng-include="'app/views/column.html'"></div>
 
         <div class="col-sm-4 hidden-xs" ng-show="!showMe" ng-controller="ColumnThreeCtrl" ng-include="'app/views/column.html'"></div>
-      </div>
-      
-      <div ng-swipe-right="swipe()">
+        </div>
 
+      <div class="row">
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFourCtrl" ng-include="'app/views/column.html'"></div>
 
         <div class="col-sm-4" ng-hide="showMore" ng-controller="ColumnFiveCtrl" ng-include="'app/views/column.html'"></div>
