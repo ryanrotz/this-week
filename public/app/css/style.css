@@ -48,6 +48,7 @@ li {
 .next {
   display: inline-block;
   margin-right: 12px;
+  float: right;
 }
 
 /*.nav-ctn {
