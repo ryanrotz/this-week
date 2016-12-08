@@ -13,8 +13,8 @@
   and
   http://onehungrymind.com/build-sweet-angularjs-photo-slider-pt-2-ngtouch/ -->
     <div>
-        <a class="arrow prev" href="#" ng-click="nextCol()">  <<<<<<<  </a>
-        <a class="arrow next" href="#" ng-click="prevCol()">  >>>>>>>  </a>
+        <a href="#" ng-click="nextCol()"><i class="arrow prev material-icons">&#xE5C4;</i></a>
+        <a href="#" ng-click="prevCol()"><i class="arrow next material-icons">&#xE5C8;</i></a>
 
         <div ng-repeat="col in cols" class="" ng-hide="!isCurrentIndex($index)" ng-include="col.content"></div>
 
@@ -40,8 +40,10 @@
     </div>
   </div> 
 
-  <a class="arrow prev" href="#" ng-click="swipe()">  <<<<<<<  </a>
-  <a class="arrow next" href="#" ng-click="swipe()">  >>>>>>>  </a>
+  <div>
+    <a href="#" ng-click="swipe()"><i class="arrow prev material-icons">&#xE5C4;</i></a>
+    <a href="#" ng-click="swipe()"><i class="arrow next material-icons">&#xE5C8;</i></a>
+  </div>
 
   <div class="columns">
     <div class="row">
