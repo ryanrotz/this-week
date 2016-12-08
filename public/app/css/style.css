@@ -40,13 +40,50 @@ li {
 }
 
 .prev {
+  display: inline-block;
+  left: 30px;
   margin-left: 12px;
 }
 
 .next {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+/*.nav-ctn {
+  text-align: center;
+  position: absolute;
+}
+
+.column-counter {
+  display: inline-block;
+  position: relative;
+}*/
+
+.block {
+  display: block;
+  width: auto;
+  position: relative;
+}
+
+.left-arrow {
+  float: left;
+  margin-left: 12px;
+}
+.right-arrow {
   float: right;
   margin-right: 12px;
 }
+
+.column-counter {
+  display: inline-block;
+  left: 40%;
+}
+
+
+
+
+
 
 .columns {
   /*background-color: #fafafa;*/
@@ -197,6 +234,7 @@ a, a:active, a:hover, a:link, a:visited {
     }
 }
 
+/* Extra Extra small screens */
 @media all and (max-width: 392px) {
 
   .header-text {
@@ -210,6 +248,10 @@ a, a:active, a:hover, a:link, a:visited {
 
   h2 {
     font-size: 12px;
+  }
+
+  .column-counter {
+    left: 35%;
   }
 
   .enter-topic {
@@ -237,6 +279,10 @@ a, a:active, a:hover, a:link, a:visited {
     font-size: 12px;
   }
 
+  .column-counter {
+    left: 38%;
+  }
+
   .topic-field {
     width: 170px;
   }
@@ -257,8 +303,12 @@ a, a:active, a:hover, a:link, a:visited {
     font-size: 12px;
   }
 
+  .column-counter {
+    left: 41%;
+  }
+
   .topic-field {
-    width: 340px;
+    width: 300px;
   }
 }
 
