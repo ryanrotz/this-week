@@ -1,5 +1,6 @@
 
 <div ng-controller="ParentCtrl">
+  <div ng-swipe-right="nextCol()" ng-swipe-left="prevCol()">
   <div class="header">
     <div class="header-text"> 
       <h1>Meetups for every part of your&nbsp;life</h1>
@@ -77,25 +78,21 @@
 
 
 <!-- Slider code -->
-<div class="container slider"> 
+<div>
     <a class="arrow prev" href="#" ng-click="nextCol()">  <<<<<<<  </a>
     <a class="arrow next" href="#" ng-click="prevCol()">  >>>>>>>  </a>
 
-    <div ng-repeat="col in cols" class="" ng-swipe-right="nextCol()" ng-swipe-left="prevCol()" ng-hide="!isCurrentIndex($index)" ng-include="col.content"></div>
+    <div ng-repeat="col in cols" class="" ng-hide="!isCurrentIndex($index)" ng-include="col.content"></div>
 
-    <nav class="nav">
+   <!--  <nav class="nav"> -->
     <ul>
     <li ng-repeat="col in cols"><div ng-class="{'active':isCurrentIndex($index)}" ng-click="setCurrentIndex($index)"></div></li>
     </ul>
-    </nav>
-
+    <!-- </nav> -->
 </div>
 
-
-
-
-
-
+<!-- ending swipe div -->
+</div>
 
 <!-- endig Parent Controller div  -->
 </div>  

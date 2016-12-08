@@ -52,7 +52,7 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
   };
 
   $scope.prevCol = function() {
-    ($scope.currentIndex < $scope.cols.length - 1) ? ++$scope.currentIndex : 0;
+    $scope.currentIndex = ($scope.currentIndex < $scope.cols.length - 1) ? ++$scope.currentIndex : 0;
   };
 
   $scope.nextCol = function() {
