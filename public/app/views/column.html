@@ -1,39 +1,37 @@
 <!-- Column of meetups -->
 <form ng-submit="submitCity(textInput, radius, zipcode)">
-    <div uib-dropdown keyboard-nav dropdown-append-to-body class="enter-topic">
-      <!-- <label class="topic-label" for="text">Topic</label> -->
+  <div uib-dropdown keyboard-nav dropdown-append-to-body class="enter-topic">
       
-      <input class="topic-field" type="text" name="text" ng-model="textInput" placeholder="Enter a topic" id="simple-dropdown" uib-dropdown-toggle />
+    <input class="topic-field" type="text" name="text" ng-model="textInput" placeholder="Enter a topic" id="simple-dropdown" uib-dropdown-toggle />
 
-      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-dropdown">
-        <li role="menuitem" ng-repeat="topic in topics">
-          <a ng-click="bindTopic(topic)">{{topic}}</a>
-        </li>
-      </ul>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-dropdown">
+      <li role="menuitem" ng-repeat="topic in topics">
+        <a ng-click="bindTopic(topic)">{{topic}}</a>
+      </li>
+    </ul>
       
-      <button class="search" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    <button class="search" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       
-      <div class="location-area">
-        <span class="white-text">Within </span>
-        <!-- code for radius -->
-        <label for="radius">
-        <input class="radius" name="radius" type="text" inputmode="numeric" ng-model="radius" /></label>
-        <span class="white-text">miles of </span>
-        <!-- code for zip -->
-        <label for="zip">
-        <input class="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" ng-model="zipcode" /></label>
-      </div>
-
+    <div class="location-area">
+      <span class="white-text">Within </span>
+      <!-- code for radius -->
+      <label for="radius">
+      <input class="radius" name="radius" type="text" inputmode="numeric" ng-model="radius" /></label>
+      <span class="white-text">miles of </span>
+      <!-- code for zip -->
+      <label for="zip">
+      <input class="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" ng-model="zipcode" /></label>
     </div>
-    </form>
+  </div>
+</form>
 
-    <div ng-repeat="meetup in meetups" class="column">
-      <div class="event">
-        <div class="meetup-group-name">{{meetup.group.name}}</div>
-        <div><a class="meetup-name" ng-href="{{meetup.event_url}}">{{meetup.name}}</a></div>
-        <div class="attendee-count">Going: {{meetup.yes_rsvp_count}}</div>
-        <!-- <div>{{meetup.venue.name}}</div> -->
-      </div>
+  <div ng-repeat="meetup in meetups" class="column">
+    <div class="event">
+      <div class="meetup-group-name">{{meetup.group.name}}</div>
+      <div><a class="meetup-name" ng-href="{{meetup.event_url}}">{{meetup.name}}</a></div>
+      <div class="attendee-count">Going: {{meetup.yes_rsvp_count}}</div>
+      <!-- <div>{{meetup.venue.name}}</div> -->
     </div>
+  </div>
 
 
