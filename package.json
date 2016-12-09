@@ -1,7 +1,7 @@
 {
   "name": "this-week",
   "version": "1.0.0",
-  "description": "A visually attractive way to view what MeetUp events are happening this week.",
+  "description": "A mobile-optimized tool to view what MeetUp events are happening in your area this week. Swipe left/right to search multiple topics at once.",
   "main": "index.js",
   "scripts": {},
   "repository": {
