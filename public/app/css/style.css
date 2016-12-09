@@ -3,19 +3,17 @@
 }
 
 body {
-  /*background-color: #fafafa;*/
+  font-family: 'Source Sans Pro', sans-serif; 
 
-
-background: #606c88; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #606c88 , #3f4c6b); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #606c88 , #3f4c6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                           
+  background: #606c88; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #606c88 , #3f4c6b); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #606c88 , #3f4c6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                      
 }
 
 /*
 orange: #F46036
 red: #ed1c40;
-
+white-ish: #fafafa;
 */
 
 .header {
@@ -38,11 +36,14 @@ red: #ed1c40;
 }
 
 h1 {
+  /*font-weight: bold;*/
+  font-family: 'Cabin Sketch', cursive;
   font-size: 40px;
   text-align: center;
 }
 
 h2 {
+  font-family: 'Cabin Sketch', cursive;
   font-size: 20px;
 }
 
@@ -75,7 +76,7 @@ li {
   margin-top: 12px;
 }
 
-.left-arrow:focus, .left-arrow:hover, .left-arrow:active, .right-arrow:focus, .right-arrow:hover, .right-arrow:active {
+.prev:focus, .prev:hover, .prev:active, .next:focus, .next:hover, .next:active, .left-arrow:focus, .left-arrow:hover, .left-arrow:active, .right-arrow:focus, .right-arrow:hover, .right-arrow:active {
   color: #F46036;
 }
 
@@ -304,7 +305,7 @@ a, a:active, a:hover, a:link, a:visited {
   }
 
   h2 {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .column-counter {
@@ -328,7 +329,7 @@ a, a:active, a:hover, a:link, a:visited {
   }
 
   h2 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .column-counter {
