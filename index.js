@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/*', function(req, res) {
+app.get('/*', function(req, res, next) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
