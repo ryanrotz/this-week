@@ -27,12 +27,12 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.cols = [
   // Separate html documents which each have different controllers so users can view different data in each column
-    {content: 'app/views/columns/column1.html'},
-    {content: 'app/views/columns/column2.html'},
-    {content: 'app/views/columns/column3.html'},
-    {content: 'app/views/columns/column4.html'},
-    {content: 'app/views/columns/column5.html'},
-    {content: 'app/views/columns/column6.html'}
+    {content: '/public/app/views/columns/column1.html'},
+    {content: '/public/app/views/columns/column2.html'},
+    {content: '/public/app/views/columns/column3.html'},
+    {content: '/public/app/views/columns/column4.html'},
+    {content: '/public/app/views/columns/column5.html'},
+    {content: '/public/app/views/columns/column6.html'}
     ];
 
   $scope.currentIndex = 0;
