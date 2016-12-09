@@ -11,12 +11,12 @@ myApp.config([
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: '/app/views/main.html',
+    templateUrl: 'public/app/views/main.html',
     controller: 'ParentCtrl'
   })
   .state('404', {
     url: '/404',
-    templateUrl: '/app/views/404.html'
+    templateUrl: 'public/app/views/404.html'
   });
 
   // $locationProvider.html5Mode(true);
