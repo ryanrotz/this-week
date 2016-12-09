@@ -19,7 +19,7 @@ myApp.config([
     templateUrl: '/app/views/404.html'
   });
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 }]);
 
 // Parent Controller. All other controllers are children of this.
