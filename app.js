@@ -6,20 +6,20 @@ myApp.config([
   '$urlRouterProvider', 
   // '$locationProvider', 
   function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/404');
+    $urlRouterProvider.otherwise('/404');
 
-  $stateProvider
-  .state('home', {
-    url: '/',
-    templateUrl: 'public/app/views/main.html',
-    controller: 'ParentCtrl'
-  })
-  .state('404', {
-    url: '/404',
-    templateUrl: 'public/app/views/404.html'
-  });
+    $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'views/main.html',
+      controller: 'ParentCtrl'
+    })
+    .state('404', {
+      url: '/404',
+      templateUrl: 'views/404.html'
+    });
 
-  // $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
 }]);
 
 // Parent Controller. All other controllers are children of this.
@@ -27,13 +27,13 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.cols = [
   // Separate html documents which each have different controllers so users can view different data in each column
-    {content: '/public/app/views/columns/column1.html'},
-    {content: '/public/app/views/columns/column2.html'},
-    {content: '/public/app/views/columns/column3.html'},
-    {content: '/public/app/views/columns/column4.html'},
-    {content: '/public/app/views/columns/column5.html'},
-    {content: '/public/app/views/columns/column6.html'}
-    ];
+    {content: 'views/columns/column1.html'},
+    {content: 'views/columns/column2.html'},
+    {content: 'views/columns/column3.html'},
+    {content: 'views/columns/column4.html'},
+    {content: 'views/columns/column5.html'},
+    {content: 'views/columns/column6.html'}
+  ];
 
   $scope.currentIndex = 0;
 
