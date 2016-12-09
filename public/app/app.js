@@ -170,8 +170,9 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
+      url: 'https://api.meetup.com/2/open_events.json?callback=JSON_CALLBACK',
       method: 'GET',
+      // dataType: 'jsonp',
       params: {
         'zip': zipcode,
         'radius': radius,
@@ -182,7 +183,7 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
     }
 
     console.log($scope.zipcode);
-    $http(req).then(function success(res) {
+    $http.jsonp(req).then(function success(res) {
        $scope.meetups = res.data.results;
     }, function error(res) {
     });
