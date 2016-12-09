@@ -6,7 +6,6 @@ myApp.config([
   '$urlRouterProvider', 
   '$locationProvider', 
   function($stateProvider, $urlRouterProvider, $locationProvider) {
-  // $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/404');
 
   $stateProvider
@@ -23,16 +22,11 @@ myApp.config([
   $locationProvider.html5Mode(true);
 }]);
 
-// myApp.factory('zipFactory', function() {
-//   return {
-//     zipcode : '98225'
-//   };
-// });
-
+// Parent Controller. All other controllers are children of this.
 myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.cols = [
-  // create separate html documents which have ng-controller="ColumnOneCtrl" and two, three, etc.
+  // Separate html documents which each have different controllers so users can view different data in each column
     {content: 'app/views/columns/column1.html'},
     {content: 'app/views/columns/column2.html'},
     {content: 'app/views/columns/column3.html'},
@@ -59,19 +53,15 @@ myApp.controller('ParentCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.cols.length - 1;
   };
 
-
-
 // Necessary for parent/child controllers
   $scope.radius = '';
   $scope.zipcode = '';
   
-  // Swipe left and right
+  // Swipe left and right. Used for screens 768px and larger.
   $scope.showMe = false;
   $scope.showMore = true;
 
   $scope.swipe = function(){
-    // columns move to the left
-    // the column on the right appears
     $scope.showMe = !$scope.showMe;
     $scope.showMore = !$scope.showMore;
   };
@@ -188,8 +178,6 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
         'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
       }
     }
 
@@ -245,8 +233,6 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
         'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
       }
     }
 
@@ -302,8 +288,6 @@ myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
         'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
       }
     }
 
@@ -360,8 +344,6 @@ myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
         'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
       }
     }
 
@@ -418,8 +400,6 @@ myApp.controller('ColumnSixCtrl', ['$scope', '$http', function($scope, $http) {
         'text': text,
         'time': ',1w',
         'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
       }
     }
 

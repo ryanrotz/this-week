@@ -10,12 +10,6 @@ body {
   background: linear-gradient(to left, #606c88 , #3f4c6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                      
 }
 
-/*
-orange: #F46036
-red: #ed1c40;
-white-ish: #fafafa;
-*/
-
 .header {
   height: 200px;
   /*background-color: #ed1c40;*/
@@ -25,7 +19,6 @@ white-ish: #fafafa;
   position: relative;
   width: 95%;
   left: 2%;
-  /*border-radius: 5px;*/
 }
 
 .header-text {
@@ -95,16 +88,11 @@ li {
 }
 
 .columns {
-  /*background-color: #fafafa;*/
-  /*height: 600px;*/
   padding-bottom: 30px;
 }
 
 .column {
-  background-color: white;
   margin-top: 20px;
-  /*border-top: 1px solid black;*/
-  /*border-bottom: 1px solid black;*/
 }
 
 .enter-topic {
@@ -119,7 +107,6 @@ li {
 }
 
 .topic-field {
-  /*border: none;*/
   border: 1px solid #F46036;
   border-radius: 6px;
   color: white;
@@ -147,16 +134,7 @@ li {
   color: white;
 }
 
-
 .search {
-  /*background-color: #ed1c40;*/
-  /*border-radius: 95%;*/
-  /*box-shadow:    2px 2px 0 0 #cdc2c2;*/
-  /*color:         #fff;*/
-  /*display:       inline-block;*/
-  /*padding:       8px 11px;*/
-  /*text-align:    center;*/
-  /*text-shadow:   1px 1px 0 #000;*/
   background: none;
   border: none;
   padding: 0;
@@ -167,17 +145,8 @@ li {
 }
 
 .search:focus, .search:hover, .search:active, .search.active, .search:focus:active {
-  /*background-image: none;
-  outline: none;
-  -webkit-box-shadow: none;*/
-  /*box-shadow: 2px 2px 0 0 #cdc2c2;*/
-  /*color: #fff;*/
   color: #F46036;
   outline: none;
-}
-
-.dropdown-menu {
-  /*left: 7em;*/
 }
 
 .location-area {
@@ -215,10 +184,14 @@ li {
 }
 
 .event {
+  background-color: white;
   padding: 10px;
   margin: 0px 10px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(69,68,69,1);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(69,68,69,1);
+  box-shadow: 1px 1px 4px 2px rgba(69,68,69,1);
 }
 
 a, a:active, a:hover, a:link, a:visited {
@@ -231,7 +204,7 @@ a, a:active, a:hover, a:link, a:visited {
   text-transform: uppercase;
   color: rgba(0,0,0,.54);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.6;
   letter-spacing: -.02em;
   word-spacing: .1em;

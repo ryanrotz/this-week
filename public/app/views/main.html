@@ -1,10 +1,11 @@
 <!-- This code will display on screens 767px wide and smaller -->
+<!-- You see one column. Swipe left/right to see next column. 6 total columns -->
 <div ng-controller="ParentCtrl" class="hidden-md">
   <div ng-swipe-right="nextCol()" ng-swipe-left="prevCol()">
     <div class="header">
       <div class="header-text"> 
         <h1>Meetups for every part of your&nbsp;life</h1>
-        <h2>Search and swipe to see what's going on this&nbsp;week.</h2>
+        <h2>Search and swipe to see what's going on this&nbsp;week</h2>
       </div>
      </div> 
 
@@ -14,7 +15,7 @@
   http://onehungrymind.com/build-sweet-angularjs-photo-slider-pt-2-ngtouch/ -->
     <div>
         <a href="#" ng-click="nextCol()"><i class="material-icons block left-arrow">&#xE5C4;</i></a>
-        <span class="block column-counter">{{currentIndex}} / 6</span>
+        <span class="block column-counter">{{currentIndex + 1}} / 6</span>
         <a href="#" ng-click="prevCol()"><i class="material-icons block right-arrow">&#xE5C8;</i></a>
 
         <div ng-repeat="col in cols" class="" ng-hide="!isCurrentIndex($index)" ng-include="col.content"></div>
@@ -37,7 +38,7 @@
   <div class="header">
     <div class="header-text"> 
       <h1>Meetups for every part of your&nbsp;life</h1>
-      <h2>Search and swipe to see what's going on this&nbsp;week.</h2>
+      <h2>Search and swipe to see what's going on this&nbsp;week</h2>
     </div>
   </div> 
 
