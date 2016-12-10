@@ -111,26 +111,23 @@ myApp.controller('ColumnOneCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
+      url: '/meetupapi',
+      method: 'POST',
+      data: {
         'zip': zipcode,
         'radius': radius,
         'text': text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
-        // page: 10
-        // key: process.env.MEETUP_SECRET
+        'time': ',1w'
       }
     }
 
-    console.log($scope.zipcode);
     $http(req).then(function success(res) {
-       $scope.meetups = res.data.results;
+      var data = JSON.parse(res.data.body);
+      $scope.meetups = data.results;
     }, function error(res) {
+      console.log(res);
     });
   };
-
 }]);
 
 
@@ -170,22 +167,21 @@ myApp.controller('ColumnTwoCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?callback=JSON_CALLBACK',
-      method: 'GET',
-      // dataType: 'jsonp',
-      params: {
+      url: '/meetupapi',
+      method: 'POST',
+      data: {
         'zip': zipcode,
         'radius': radius,
         'text': text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        'time': ',1w'
       }
     }
 
-    console.log($scope.zipcode);
-    $http.jsonp(req).then(function success(res) {
-       $scope.meetups = res.data.results;
+    $http(req).then(function success(res) {
+      var data = JSON.parse(res.data.body);
+      $scope.meetups = data.results;
     }, function error(res) {
+      console.log(res);
     });
   };
 }]);
@@ -226,21 +222,21 @@ myApp.controller('ColumnThreeCtrl', ['$scope', '$http', function($scope, $http) 
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
+      url: '/meetupapi',
+      method: 'POST',
+      data: {
         'zip': zipcode,
         'radius': radius,
         'text': text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        'time': ',1w'
       }
     }
 
-    console.log($scope.zipcode);
     $http(req).then(function success(res) {
-       $scope.meetups = res.data.results;
+      var data = JSON.parse(res.data.body);
+      $scope.meetups = data.results;
     }, function error(res) {
+      console.log(res);
     });
   };
 }]);
@@ -281,24 +277,23 @@ myApp.controller('ColumnFourCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
+      url: '/meetupapi',
+      method: 'POST',
+      data: {
         'zip': zipcode,
         'radius': radius,
         'text': text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        'time': ',1w'
       }
     }
 
-    console.log($scope.zipcode);
     $http(req).then(function success(res) {
-       $scope.meetups = res.data.results;
+      var data = JSON.parse(res.data.body);
+      $scope.meetups = data.results;
     }, function error(res) {
+      console.log(res);
     });
   };
-
 }]);
 
 myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
@@ -337,24 +332,23 @@ myApp.controller('ColumnFiveCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
+      url: '/meetupapi',
+      method: 'POST',
+      data: {
         'zip': zipcode,
         'radius': radius,
         'text': text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        'time': ',1w'
       }
     }
 
-    console.log($scope.zipcode);
     $http(req).then(function success(res) {
-       $scope.meetups = res.data.results;
+      var data = JSON.parse(res.data.body);
+      $scope.meetups = data.results;
     }, function error(res) {
+      console.log(res);
     });
   };
-
 }]);
 
 myApp.controller('ColumnSixCtrl', ['$scope', '$http', function($scope, $http) {
@@ -393,22 +387,21 @@ myApp.controller('ColumnSixCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitCity = function(text, radius, zipcode) {
     var req = {
-      url: 'https://api.meetup.com/2/open_events.json?',
-      method: 'GET',
-      params: {
+      url: '/meetupapi',
+      method: 'POST',
+      data: {
         'zip': zipcode,
         'radius': radius,
         'text': text,
-        'time': ',1w',
-        'key': '6e3f56396c8665c5e6e5d4d78653828'
+        'time': ',1w'
       }
     }
 
-    console.log($scope.zipcode);
     $http(req).then(function success(res) {
-       $scope.meetups = res.data.results;
+      var data = JSON.parse(res.data.body);
+      $scope.meetups = data.results;
     }, function error(res) {
+      console.log(res);
     });
   };
-
 }]);
