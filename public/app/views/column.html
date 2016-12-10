@@ -28,7 +28,7 @@
   <div ng-repeat="meetup in meetups" class="column">
     <div class="event">
       <div class="meetup-group-name">{{meetup.group.name}}</div>
-      <div><a class="meetup-name" ng-href="{{meetup.event_url}}">{{meetup.name}}</a></div>
+      <div><a target="blank" class="meetup-name" ng-href="{{meetup.event_url}}">{{meetup.name}}</a></div>
       <div class="attendee-count">Going: {{meetup.yes_rsvp_count}}</div>
       <!-- <div>{{meetup.venue.name}}</div> -->
     </div>
